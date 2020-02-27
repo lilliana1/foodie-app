@@ -202,7 +202,7 @@
 
             let tip = document.getElementById("selectedTip").value;
             let tipAmount = tip * subTotal;
-            let bill = (subTotal * .07) + tipAmount;
+            let bill = (subTotal * .7) + tipAmount;
 
             document.getElementById("tipAmount").innerText = "$" + Number(tipAmount).toFixed(2);
             document.getElementById("newTotal").innerText = "$" + Number(bill).toFixed(2);
