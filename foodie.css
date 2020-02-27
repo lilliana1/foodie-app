@@ -1,0 +1,156 @@
+img {
+  width: 100px;
+  height: 150;
+}
+#navbar {
+  background-color: #e3dac9;
+  font-family: "Acme", sans-serif;
+}
+.jackInTheBox {
+  animation-duration: 3s;
+  animation-delay: 60s;
+}
+body {
+  background-color: #1a1a1d;
+}
+label {
+  color: white;
+}
+p {
+  color: black;
+  font-size: 12px;
+}
+#instruction {
+  font-size: 15px;
+}
+
+#receipt {
+  width: 35em;
+  margin: auto;
+  float: center;
+}
+#billSelection {
+  background: #fff
+    url(https://static.licdn.com/scds/common/u/images/apps/payments/textures/texture_paper_304x128_v1.png);
+  margin: 0 1em;
+  padding: 1em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  font-family: "Acme", sans-serif;
+}
+
+#billSelection h1 {
+  text-align: center;
+  color: black;
+  background: #fff
+    url(https://static.licdn.com/scds/common/u/images/apps/payments/textures/texture_paper_304x128_v1.png);
+}
+#buttonBill {
+  display: block;
+  margin: 0 auto;
+}
+
+#evenBill {
+  background: #fff
+    url(https://static.licdn.com/scds/common/u/images/apps/payments/textures/texture_paper_304x128_v1.png);
+  margin: 0 1em;
+  padding: 1em;
+}
+.resultsEvenBill {
+  color: black;
+}
+
+#ticket {
+  background: #fff
+    url(https://static.licdn.com/scds/common/u/images/apps/payments/textures/texture_paper_304x128_v1.png);
+  margin: 0 auto;
+  padding: 1em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  width: 35em;
+}
+
+#ticket h1 {
+  text-align: center;
+  color: black;
+  background: #fff
+    url(https://static.licdn.com/scds/common/u/images/apps/payments/textures/texture_paper_304x128_v1.png);
+}
+#stateTax {
+  text-align: right;
+}
+#ticket table {
+  font-family: "Acme", sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#ticket td,
+#ticket th {
+  padding: 5px;
+}
+
+#tip {
+  text-align: right;
+}
+
+#ticket td,
+#ticket #total {
+  text-align: right;
+}
+
+#ticket tfoot th {
+  border-top: 1px solid black;
+}
+
+#tipPercent {
+  float: center;
+}
+
+#newTotal {
+  float: right;
+}
+
+#entry {
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+#entry input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid black;
+  text-align: right;
+  font-family: "Acme", sans-serif;
+  font-size: 15px;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#entry input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+#entryTip {
+  float: right;
+}
+
+#entryTip input {
+  text-align: right;
+}
+#button {
+  display: block;
+  margin: 0 auto;
+}
+#buttonAdd {
+  display: block;
+  margin: 0 auto;
+  background: #d4af37;
+  color: white;
+  border-radius: 25px;
+}
+.hide {
+  display: none;
+}
