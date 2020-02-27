@@ -1,5 +1,8 @@
 # Foodie
 Foodie is a simple web app to be use in Puerto Rico. 2 - 1 app that helps you divide your bill into even or separate, not only that but it also has a random food picker. You choose what type of food you would like to eat and it will choose for you! Remember is only meant to be use in Puerto Rico. 
+
+Deployment: https://lilliana1.github.io/foodie-app/
+
 ![picture](foodieweb.png)
 
 ## Code 
