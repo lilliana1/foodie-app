@@ -1,0 +1,61 @@
+.img-thumbnail {
+  background-color: #1a1a1d;
+  vertical-align: baseline;
+  border-color: #1a1a1d;
+}
+#navbar {
+  background-color: #e3dac9;
+}
+body {
+  background-color: #1a1a1d;
+}
+h1 {
+  text-align: center;
+  font-family: "Barrio", cursive;
+  color: white;
+  background-color: #1a1a1d;
+}
+
+.container {
+  text-align: center;
+  margin: 10%;
+  padding: 64px;
+  width: inherit;
+  background: #1a1a1a url(foodiecont.png) no-repeat center top;
+}
+
+.btn {
+  width: 150px;
+  height: 50px;
+  background-color: #d4af37;
+  border: none;
+  padding: 16px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: "Acme", sans-serif;
+  vertical-align: baseline;
+}
+
+.btn:active {
+  width: 150px;
+  background-color: skyblue;
+}
+
+.box {
+  font-size: 28px;
+  width: 450px;
+  text-align: center;
+  font-family: "Acme", sans-serif;
+}
+
+#selector {
+  font-size: 16px;
+  font-family: "Acme", sans-serif;
+}
+#footer {
+  text-align: center;
+  font-family: "Barrio", cursive;
+  color: white;
+  background-color: #1a1a1d;
+}
