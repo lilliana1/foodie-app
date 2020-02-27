@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="foodie.css" />
+    <title>Foodie Picker</title>
+    <!--CSS Font-->
+    <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+
+    <!--CSS de foodpicker y font de la frase -->
+    <link rel="stylesheet" href="foodiepicker.css">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Nunito|Oxygen|Poiret+One" rel="stylesheet">
+    <script src="main.js"></script>
+
+    <!--Animated CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+
+<body>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-black">
+        <img src="foodie.png" alt="foodie logo" class="img-thumbnail">
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="foodie.html">Bill Splitter<span></span></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="foodpicker.html">Food Picker<span></span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--fin de navbar-->
+
+    <!--Bill Selection-->
+    <h1 class="animated bounce">Helping You $plit the bill one at a time </h1>
+    <br>
+    <br>
+    <div id="receipt">
+        <div id="billSelection">
+            <form>
+                <div id="radioButtonSelection">
+                    <h1>How are you going to split the bill?</h1>
+                    <p id="instruction">Please click one:</p>
+                    <input type="radio" name="people" onclick="billDecisionEven();" id="even">Even Bill<br>
+                    <!--onclick="show1();"-->
+                    <br>
+                    <input type="radio" name="people" onclick="billDecisionSeparate();" id="separate">Separate Bills<br>
+                    <!--onclick="show2();"-->
+                    <br>
+                    <!-- <button type="button" id= "buttonEvenBill" class="btn btn-success" onclick="billDecision();" style="display: block;margin: 0 auto;">Submit</button> anadi onclick   -->
+                </div>
+            </form>
+            <!--Selecion de Bill -->
+            <div id="evenBill" class="hide">
+                <!--class="hide" es para que cuando escoga uno de los radio button, aparezca el form q llamo y no todos-->
+                <h1>Even Bill</h1>
+                <form action="javascript:void(splitBill())">
+                    <input required type="number" step="any" class="form-control" id="bill" type="text"
+                        placeholder="Enter Bill Total (including tax)">
+                    <br>
+                    <input required type="number" step="any" class="form-control" id="split" type="text"
+                        placeholder="Enter Number of people">
+                    <br>
+                    <select id="selectedTipSplittedBill" ng-model="tipPercent" style="display: block;margin: 0 auto;">
+                        <option value=".0">0% Awful</option>
+                        <option value=".15">15% Good</option>
+                        <option value=".18">18% Great</option>
+                        <option value=".20">20% Exceptional</option>
+                    </select>
+                    <br>
+                    <br>
+                    <button class="btn btn-success btn-lg" style="display: block;margin: 0 auto;">Calculate</button>
+                    </br>
+                    </br>
+                    <div class="resultsEvenBill">
+                        <strong>Tip:&nbsp; <span id="tip"></span></strong>
+                        <br>
+                        <strong>Total:&nbsp; <span id="total"></span></strong>
+                        <br>
+                        <strong>Split total per person:&nbsp; <span id="splitTotal"></span></strong>
+                        <br>
+                    </div>
+                </form>
+                <span id="tip"></span>
+                <span id="splitTotal"></span>
+                <br>
+            </div>
+        </div>
+    </div>
+    <!--otro div -->
+    <div id="ticket" class="hide">
+        <!--class="hide" es para que cuando escoga uno de los radio button, aparezca ese-->
+        <h1>Receipt</h1>
+        <p>Please put one by one the price of each item. To add, you can either press enter or you can click <strong>add
+                item</strong>. To obtain the total of your bill, select tip percentage and click
+            <strong>Calculate</strong>.</p>
+        <table>
+            <tbody id="entries">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Item Price</th>
+                    <th id="itemPrice">
+    </div>
+    <form action="javascript:void(enter())" id="entry">
+        <input required type="number" step="any" id="newEntry" autofocus placeholder="How Much?">
+        <br><br>
+        <button id="buttonAdd" class=".btn-group-lg" type="submit"> add item </button>
+    </form>
+    </th>
+    </tr>
+    <tr>
+        <form>
+            <th>SubTotal:&nbsp;</th><span id="id=" subTotal></span>
+            <!--debo borrar esa tambien?-->
+            <th id="subTotal" data-subtotal=""></th>
+    <tr></tr>
+    <th>State Tax</th>
+    <th id="stateTax">11.5%</th>
+    <tr></tr>
+    <th>Select Tip Percentage</th>
+    <th>
+        <select id="selectedTip" ng-model="tipPercent">
+            <option value=".0">0% Awful</option>
+            <option value=".15">15% Good</option>
+            <option value=".18">18% Great</option>
+            <option value=".20">20% Exceptional</option>
+        </select>
+    <th>Tip Amount:&nbsp;<span id="tipAmount"></span></th>
+    <tr></tr>
+    <th>Total to Pay:&nbsp;<span id="newTotal"></span></th>
+    <tr></tr>
+    </th>
+    </tr>
+    </tfoot>
+    </form>
+    </table>
+    <button id="button" class="btn btn-success" onclick="calculate();">Calculate</button>
+    <!-- le añadi el onclick y ahora si sirve el botón de calculate pero me sale NAN  -->
+    </form>
+    </div>
+
+    <!--javascript-->
+    <script>
+
+
+        //js si escoge split
+        let splitBill = function () {
+            let bill = Number(document.getElementById('bill').value);
+            let split = Number(document.getElementById('split').value);
+            let tip = document.getElementById("selectedTipSplittedBill").value;
+            let tipToPay = bill * tip;
+            let totalBill = bill + tipToPay;
+            let splitPerPerson = totalBill / split;
+
+            document.getElementById("tip").innerHTML = "$" + Number(tipToPay).toFixed(2);
+            document.getElementById("total").innerHTML = "$" + Number(totalBill).toFixed(2);
+            document.getElementById("splitTotal").innerHTML = "$" + Number(splitPerPerson).toFixed(2);
+        }
+
+        //javascript de separate bill
+
+        var total = 0;
+
+        document.getElementById('entry').onsubmit = enter;
+
+        function enter() {
+            var entry = document.getElementById('newEntry').value;
+            var entry = parseFloat(entry);
+            currency = currencyFormat(entry);
+            document.getElementById('entries').innerHTML += '<tr><td></td><td>' + currency + '</td></tr>';
+            total += entry;
+            document.getElementById('subTotal').innerText = currencyFormat(total);
+            document.getElementById('subTotal').setAttribute("data-subtotal", total.toString());
+
+            document.getElementById('newEntry').value = '';
+            return false;
+        }
+
+        function currencyFormat(number) {
+            var currency = parseFloat(number);
+            currency = currency.toFixed(2);
+            currency = '$' + currency;
+            return currency;
+        }
+
+        //calculate
+        let calculate = function () {
+            let subTotal = document.getElementById("subTotal").getAttribute("data-subtotal")
+
+            let tip = document.getElementById("selectedTip").value;
+            let tipAmount = tip * subTotal;
+            let bill = (subTotal * 1.115) + tipAmount;
+
+            document.getElementById("tipAmount").innerText = "$" + Number(tipAmount).toFixed(2);
+            document.getElementById("newTotal").innerText = "$" + Number(bill).toFixed(2);
+        }
+    </script>
+
+
+
+
+
+
+
+
+    <!--footer-->
+    <!--<footer id="footer">Created by Lilliana Ramos</footer>-->
+    <!--acaba footer-->
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
